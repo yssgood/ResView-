@@ -1,0 +1,40 @@
+<%- include("../partials/header") %> 
+<div class = "container">
+    <header class = "jumbotron">
+        <div id = "landing-header" class = "container">
+            <h1>Welcome to ResView!</h1>
+            <p>View our restaurants</p>
+            <p>
+                <a class = "btn btn-primary btn-lg" href="/restaurants/new">Add new</a>
+            </p>
+        </div>
+    </header>
+
+    <div class = "row text-center" style = "display:flex; flex-wrap: wrap;">
+        <% restaurants.forEach(function(restaurant){ %>
+            <div class = "col-md-3 col-sm-6">
+                <div id = "landing-header" class = "thumbnail">
+                    <img src="<%= restaurant.image %>" alt="">
+                    <div class = "caption">
+                        <h4><%= restaurant.name %></h4>
+                    </div>
+                    <p>
+                        <a href="/restaurants/<%= restaurant._id %>" class = "btn btn-primary">More Info</a>
+                    </p>
+                </div>
+            </div>
+    
+        <% }); %> 
+    </div>
+</div>
+
+<!-- <ul class="slideshow">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul> -->
+
+
+<%- include("../partials/footer") %> 
